@@ -12,6 +12,8 @@
 
 ⭐ 觉得写得狠、写得实？点个 Star，让更多人看到 Agent 厂商自己也该被审计：https://github.com/CodeAlex52/inside-zcode
 
+> 🧾 逐条断言的可核查索引：[EVIDENCE.md](./EVIDENCE.md) · 🌍 English edition：[README_EN.md](./README_EN.md)
+
 ---
 
 ## TL;DR：先说结论，代码不会撒谎
@@ -123,7 +125,7 @@ export function createComputerUseRuntime(_options) {
 
 ---
 
-## 四、架构剖析：大而全，四个字——“工作台野心”
+## 四、架构剖析（Architecture）：大而全，四个字——“工作台野心”
 
 ```
 packages/desktop      Electron Main + Host + Renderer，打包 DMG
@@ -213,7 +215,7 @@ A：3.14.0 上传链路已摘（社区验证 404），短期风险收敛。但 `
 
 ---
 
-## 复现本文
+## 复现本文（Reproduction / Usage）
 
 ```bash
 git clone --depth 1 https://github.com/zai-org/ZCode /tmp/zcode
@@ -222,7 +224,12 @@ cat /tmp/zcode/packages/zcode-cua/index.js
 sed -n '70,75p' /tmp/zcode/packages/ui/src/settings/model-provider-section/CodingPlanStatusActions.tsx
 wc -l /tmp/zcode/NOTICE.md && head -30 /tmp/zcode/NOTICE.md
 find /tmp/zcode -type f | wc -l
+
+# 本机痕迹只读自查（本仓库自带脚本）：
+./scripts/scan-local-traces.sh
 ```
+
+逐条断言的完整索引见 [EVIDENCE.md](./EVIDENCE.md)；英文版：[README_EN.md](./README_EN.md)。
 
 ## 参考与致谢
 
